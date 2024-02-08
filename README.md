@@ -1,12 +1,12 @@
 Dog's breed detector
 ==============================
 
-[![Build Status](https://jenkins.indigo-datacloud.eu/buildStatus/icon?job=Pipeline-as-code%2FDEEP-OC-org%2Fdogs_breed_det%2Fmaster)](https://jenkins.indigo-datacloud.eu/job/Pipeline-as-code/job/DEEP-OC-org/job/dogs_breed_det/job/master/)
+[![Build Status](https://jenkins.services.ai4os.eu/buildStatus/icon?job=AI4OS-HUB-TEST%2Fdogs_breed_det%2Fmain)](https://jenkins.services.ai4os.eu/job/AI4OS-HUB-TEST/job/dogs_breed_det/job/main/)
 
 
 An application to identify Dog's breed, "Dogs breed detector", using deep learning. **133** breeds are known.
 
-[DEEPaaS API V2](https://github.com/indigo-dc/DEEPaaS) is used to access the model functionality.
+[DEEPaaS API V2](https://github.com/ai4os/DEEPaaS) is used to access the model functionality.
 
 Dogs breed detector is originally forked from [udacity/dogs-project](https://github.com/udacity/dog-project), dataset comes from [dog dataset](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip).
 
