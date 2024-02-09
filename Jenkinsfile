@@ -25,6 +25,7 @@ pipeline {
 
         stage('Style analysis: PEP8') {
             steps {
+                sh 'rm -rf .tox'  //remove .tox if already present
                 ToxEnvRun('pep8')
             }
             post {
