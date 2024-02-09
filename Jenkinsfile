@@ -7,7 +7,7 @@ def job_result_url = ''
 pipeline {
     agent {
         //docker { image 'deephdc/tensorflow:1.12.0-py36' }
-        docker { image 'indigodatacloud/ci-images:python3.8' }
+        docker { image 'indigodatacloud/ci-images:python3.6' }
     }
 
     environment {

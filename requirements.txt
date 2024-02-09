@@ -4,7 +4,7 @@ pathlib2
 Sphinx
 python-dotenv>=0.5.1
 
-opencv-python==3.4.18.65 #3.2.0.8
+opencv-python==3.3.0.10   #3.4.18.65 #3.2.0.8
 h5py>=2.6.0       #===2.6.0
 matplotlib>=2.0.0 #==2.0.0
 numpy>=1.13.2     #==1.112.0
@@ -12,13 +12,14 @@ scipy>=0.18.1     #==0.18.1
 tqdm~=4.14.0      #==4.11.2
 keras==2.0.2
 scikit-learn>=0.18.1 #==0.18.1
-pillow>=4.0.0        #==4.0.0
+Pillow~=7.2.0        #==4.0.0
 webargs~=5.5.2
-marshmallow
+marshmallow~=3.7.0
 py-cpuinfo
 psutil
 
+aiohttp~=3.6.0
 flask~=1.1.0
 Jinja2~=2.11.0
 deepaas>=1.3.0
-flaat<1.0
+flaat~=0.8.0
