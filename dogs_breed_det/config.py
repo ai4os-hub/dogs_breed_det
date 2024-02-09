@@ -26,7 +26,8 @@ DATA_DIR = os.path.join(IN_OUT_BASE_DIR, 'data')
 MODELS_DIR = os.path.join(IN_OUT_BASE_DIR, 'models')
     
 Dog_RemoteSpace = 'rshare:/deep-oc-apps/dogs_breed_det/'
-Dog_RemoteShare = 'https://nc.deep-hybrid-datacloud.eu/s/D7DLWcDsRoQmRMN/download?path=%2F&files='
+#Dog_RemoteShare = 'https://nc.deep-hybrid-datacloud.eu/s/D7DLWcDsRoQmRMN/download?path=%2F&files='
+Dog_RemoteShare = 'https://share.services.ai4os.eu/index.php/s/PwbSH4g4obrpbAn/download?path=%2F&files='
 Dog_DataDir = 'dogImages'
 Dog_WeightsPattern = 'weights.best.NETWORK.3layers.hdf5'
 Dog_LabelsFile = os.path.join(DATA_DIR, 'dog_names.txt')

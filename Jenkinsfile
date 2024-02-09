@@ -14,7 +14,6 @@ pipeline {
         author_name = "V.Kozlov (KIT)"
         author_email = "valentin.kozlov@kit.edu"
         app_name = "dogs_breed_det"
-        job_location = "Pipeline-as-code/DEEP-OC-org/DEEP-OC-dogs_breed_det/${env.BRANCH_NAME}"
     }
 
     stages {
@@ -79,22 +78,22 @@ pipeline {
             }
         }
 
-        stage("Re-build Docker images") {
-            when {
-                anyOf {
-                   branch 'master'
-                   branch 'test'
-                   buildingTag()
-               }
-            }
-            steps {
-                script {
-                    def job_result = JenkinsBuildJob("${env.job_location}")
-                    job_result_url = job_result.absoluteUrl
-                }
-            }
-        }
-
+//        stage("Re-build Docker images") {
+            // when {
+            //     anyOf {
+            //        branch 'master'
+            //        branch 'test'
+            //        buildingTag()
+            //    }
+            // }
+            // steps {
+            //     script {
+            //         def job_result = JenkinsBuildJob("${env.job_location}")
+            //         job_result_url = job_result.absoluteUrl
+            //     }
+//            }
+//        }
+//
     }
 
     post {
@@ -109,7 +108,7 @@ pipeline {
                 def build_status =  currentBuild.result
                 build_status =  build_status ?: 'SUCCESS'
                 def subject = """
-New ${app_name} build in Jenkins@DEEP:\
+New ${app_name} build in Jenkins@AI4OS:\
 ${build_status}: Job '${env.JOB_NAME}\
 [${env.BUILD_NUMBER}]'"""
 
