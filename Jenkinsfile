@@ -6,7 +6,7 @@ def job_result_url = ''
 
 pipeline {
     agent {
-        docker { image 'indigodatacloud/ci-images:python3.6' }
+        docker { image 'deephdc/tensorflow:1.12.0-py36' }
     }
 
     environment {
@@ -29,16 +29,7 @@ pipeline {
             }
             post {
                 always {
-                    warnings canComputeNew: false,
-                             canResolveRelativePaths: false,
-                             defaultEncoding: '',
-                             excludePattern: '',
-                             healthy: '',
-                             includePattern: '',
-                             messagesPattern: '',
-                             parserConfigurations: [[parserName: 'PYLint', pattern: '**/flake8.log']],
-                             unHealthy: ''
-                    //WarningsReport('PYLint') // 'Flake8' fails..., consoleParsers does not produce any report...
+                    recordIssues(tools: [flake8(pattern: 'flake8.log')])
                 }
             }
         }
