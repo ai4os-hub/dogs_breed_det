@@ -14,6 +14,8 @@ pipeline {
         author_name = "V.Kozlov (KIT)"
         author_email = "valentin.kozlov@kit.edu"
         app_name = "dogs_breed_det"
+        base_cpu_tag = "1.12.0-py36"
+        base_gpu_tag = "1.12.0-gpu-py36"
     }
 
     stages {
