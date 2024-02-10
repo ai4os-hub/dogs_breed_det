@@ -44,7 +44,7 @@ pipeline {
             }
             post {
                 success {
-                    HTMLReport('cover', 'index.html', 'coverage.py report')
+                    //HTMLReport('cover', 'index.html', 'coverage.py report')
                     CoberturaReport('**/coverage.xml')
                 }
             }
