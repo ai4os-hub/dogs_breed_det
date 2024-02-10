@@ -39,7 +39,7 @@ pipeline {
 
         stage('Unit testing coverage') {
             steps {
-                ToxEnvRun('cover')
+                //ToxEnvRun('cover')
                 ToxEnvRun('cobertura')
             }
             post {
