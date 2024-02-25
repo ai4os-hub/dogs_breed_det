@@ -43,12 +43,12 @@
     "dataset_url": "https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip",
     "sources": {
 		"dockerfile_repo": "https://github.com/ai4os-hub/dogs_breed_det",
-		"docker_registry_repo": "ai4hub/dogs_breed_det",
+		"docker_registry_repo": "ai4oshub/dogs_breed_det",
 		"code": "https://github.com/ai4os-hub/dogs_breed_det"
 	},
     "continuous_integration": {
-        "build_status_badge": "https://jenkins.services.ai4os.eu/buildStatus/icon?job=AI4OS-HUB-TEST/dogs_breed_det/main",
-        "build_status_url": "https://jenkins.services.ai4os.eu/job/Pipeline-as-code/job/AI4OS-HUB-TEST/job/dogs_breed_det/job/main"
+        "build_status_badge": "https://jenkins.services.ai4os.eu/buildStatus/icon?job=AI4OS-hub/dogs_breed_det/main",
+        "build_status_url": "https://jenkins.services.ai4os.eu/job/Pipeline-as-code/job/AI4OS-hub/job/dogs_breed_det/job/main/"
     },
     "tosca": [
         {

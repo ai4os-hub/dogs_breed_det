@@ -1,7 +1,7 @@
 # Dockerfile has three Arguments: tag, pyVer, branch
-# tag - tag for Tensorflow Image (default: 1.10.0-py3)
+# tag - tag for Tensorflow Image (default: 1.12.0-py3)
 # pyVer - python versions as 'python' or 'python3' (default: python3)
-# branch - user repository branch to clone (default: master, other option: test)
+# branch - user repository branch to clone (default: main, other option: test)
 #
 # To build the image:
 # $ docker build -t <dockerhub_user>/<dockerhub_repo> --build-arg arg=value .
@@ -13,7 +13,7 @@
 # set this tag for our custom built TF image
 ARG tag=1.12.0-py36
 
-# Base image, e.g. tensorflow/tensorflow:1.10.0
+# Base image, e.g. tensorflow/tensorflow:1.12.0
 # DEEPaaS API V2 requires python3.6,
 # use our custom built Tensorflow images
 FROM deephdc/tensorflow:${tag}
