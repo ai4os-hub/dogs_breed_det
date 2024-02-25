@@ -82,8 +82,8 @@ RUN git clone https://github.com/ai4os/deep-start /srv/.deep-start && \
 ENV SHELL /bin/bash
 
 # Install user app:
-RUN git clone -b $branch https://github.com/ai4os-hub/dogs_breed_det && \
-    cd  dogs_breed_det && \
+RUN git clone -b $branch https://github.com/ai4os-hub/dogs-breed-detector && \
+    cd  dogs-breed-detector && \
     pip install --no-cache-dir -e . && \
     rm -rf /root/.cache/pip/* && \
     rm -rf /tmp/* && \
