@@ -14,7 +14,7 @@
         "",
         "and amounts for **1080 MB** in zipped format (see the dataset link).",
         "",
-        "**N.B.:** pre-trained weights can be found <a href=https://nc.deep-hybrid-datacloud.eu/s/D7DLWcDsRoQmRMN>here</a>",
+        "**N.B.:** pre-trained weights can be found <a href=https://share.services.ai4os.eu/index.php/s/PwbSH4g4obrpbAn>here</a>",
         "",
         "**References**\n",
 		"[1] CNN articles:\n",
@@ -45,11 +45,11 @@
 		"dockerfile_repo": "https://github.com/ai4os-hub/dogs-breed-detector",
 		"docker_registry_repo": "ai4oshub/dogs-breed-detector",
 		"code": "https://github.com/ai4os-hub/dogs-breed-detector",
-	        "ai4_template": "ai4-template/2.0.0"
+	    "ai4_template": "ai4-template/2.0.0"
 	},
     "continuous_integration": {
         "build_status_badge": "https://jenkins.services.ai4os.eu/buildStatus/icon?job=AI4OS-hub/dogs-breed-detector/main",
-        "build_status_url": "https://jenkins.services.ai4os.eu/job/Pipeline-as-code/job/AI4OS-hub/job/dogs-breed-detector/job/main/"
+        "build_status_url": "https://jenkins.services.ai4os.eu/job/AI4OS-hub/job/dogs-breed-detector/job/main/"
     },
     "tosca": [
         {
