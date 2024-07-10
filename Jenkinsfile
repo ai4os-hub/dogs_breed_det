@@ -7,6 +7,9 @@ pipeline {
 
     stages {
         stage('Application testing') {
+            when {
+                not { changeset ".github/**/*" }
+            }
             steps {
                 script {
                     projectConfig = pipelineConfig()
@@ -41,6 +44,6 @@ pipeline {
                          reportTitles: ''])
             // Clean after build
             cleanWs()
-        }    
+        }
     }
 }
