@@ -37,4 +37,4 @@ jobs:
         github_token: ${{ secrets.TARGET_TOKEN }}
         repository: ai4os-hub/dogs-breed-detector
         branch: ${{ github.head_ref }}
-        force_with_lease: true
+        force: true
