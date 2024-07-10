@@ -16,20 +16,24 @@ on:
       - 'releases/**'
   delete:
 
+permissions: write-all
 
 jobs:
-  sync:
+  build:
     runs-on: ubuntu-latest
-    name: Git Repo Sync
     steps:
     - uses: actions/checkout@v4
       with:
+        ref: ${{ github.head_ref }}
         fetch-depth: 0
-    - uses: ai4os/git-repo-sync@0.1.1
-      # FORK of https://github.com/wangchucheng/git-repo-sync.git
+        token: ${{ secrets.TARGET_TOKEN }}
+    - name: Commit files
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
       with:
-        # Such as e.g. https://codebase.helmholtz.cloud/m-team/ai/ai4os-yolov8-torch
-        target-url: https://github.com/ai4os-hub/dogs-breed-detector
-        # You can store secrets in your project's 'Setting > Secrets' and reference the names here. Such as ${{ secrets.TARGET_TOKEN }}
-        target-username: vykozlov
-        target-token: ${{ secrets.TARGET_TOKEN }}
+        github_token: ${{ secrets.TARGET_TOKEN }}
+        repository: ai4os-hub/dogs-breed-detector
+        branch: ${{ github.head_ref }}
