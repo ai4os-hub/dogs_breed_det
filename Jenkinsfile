@@ -6,15 +6,17 @@ pipeline {
     agent any
 
     stages {
-        parallel {
-            stage('Application testing') {
-                when {
-                    not { changeset ".github/**/*" }
-                }
-                steps {
-                    script {
-                        projectConfig = pipelineConfig()
-                        buildStages(projectConfig)
+        stage('Application testing') {
+            when {
+                not { changeset ".github/**/*" }
+            }
+            parallel {
+                stage('Testing') {
+                    steps {
+                        script {
+                            projectConfig = pipelineConfig()
+                            buildStages(projectConfig)
+                        }
                     }
                 }
             }
