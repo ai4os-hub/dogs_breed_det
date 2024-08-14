@@ -10,10 +10,12 @@ pipeline {
             when {
                 not { changeset ".github/**/*" }
             }
-            steps {
-                script {
-                    projectConfig = pipelineConfig()
-                    buildStages(projectConfig)
+            parallel {
+                steps {
+                    script {
+                        projectConfig = pipelineConfig()
+                        buildStages(projectConfig)
+                    }
                 }
             }
         }
