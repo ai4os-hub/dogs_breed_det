@@ -1,0 +1,38 @@
+name: github-to-other
+
+# Adjust for your needs, e.g. add your own <branch-to-sync>
+# for more info: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+on:
+  release:
+    branches:
+      - main
+      - master
+  push:
+    branches:
+      - main
+      - master
+      - dev
+      - 'releases/**'
+      # ADD ANY OTHER BRANCH IF NECESSARY
+  delete:
+
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    name: Git Repo Sync
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - uses: ai4os/git-repo-sync@0.1.1
+      # FORK of https://github.com/wangchucheng/git-repo-sync.git
+      with:
+        #########################################################
+        # YOU SHOULD UPDATE "target-url" LINE below, e.g.
+        target-url: https://codebase.helmholtz.cloud/m-team/ai/dogs-breed-detector
+        #########################################################
+        #target-url: <target-url>
+        # You can store secrets in your project's 'Setting > Secrets' and reference the names here. Such as ${{ secrets.TARGET_TOKEN }}
+        target-username: ${{ secrets.TARGET_USERNAME }}
+        target-token: ${{ secrets.TARGET_TOKEN }}
