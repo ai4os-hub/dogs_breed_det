@@ -1,0 +1,46 @@
+name: sync-up
+
+# Adjust for your needs, e.g. add your <branch-to-sync>
+# for more info: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+on:
+  release:
+    branches:
+      - main
+      - master
+  push:
+    branches:
+      - main
+      - master
+      - dev
+      - test
+      - 'releases/**'
+  delete:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions: write-all
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.head_ref }}
+        fetch-depth: 0
+        token: ${{ secrets.OWNER_TOKEN }}
+    - name: Commit files
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.OWNER_TOKEN }}
+        #########################################################
+        # YOU SHOULD UPDATE "repository" LINE below, e.g.
+        # repository: ai4os-hub/your-ai-application
+        #########################################################
+        repository: ai4os-hub/dogs-breed-detector
+        branch: ${{ github.head_ref }}
+        force_with_lease: true
