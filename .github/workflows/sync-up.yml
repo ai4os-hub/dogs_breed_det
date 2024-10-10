@@ -43,4 +43,4 @@ jobs:
         #########################################################
         repository: ai4os-hub/dogs-breed-detector
         branch: ${{ github.head_ref }}
-        force: true
+        #force: true
