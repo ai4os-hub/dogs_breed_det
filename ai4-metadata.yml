@@ -40,5 +40,6 @@ categories:
   - AI4 inference
 libraries:
   - TensorFlow
+  - Keras
 data-type:
   - Image
