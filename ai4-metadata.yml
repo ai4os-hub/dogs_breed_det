@@ -2,7 +2,7 @@ metadata_version: 2.0.0
 title: Dogs breed detector
 summary: Identify a dogs breed on the image (133 known breeds)
 description: |-
-  The application applies Transfer learning for dog's breed identification, which is implemented by the means of Tensorflow and Keras.
+  The application applies Transfer learning for dog's breed identification, which is implemented by the means of Tensorflow and Keras. This is a modified fork of [udacity/dogs-project](https://github.com/udacity/dog-project)
   
   From a pre-trained CNN model (VGG16 | VGG19 | Resnet50 | InceptionV3 [1]) the last layer is removed, then new Fully Connected (FC) layers are added, which are trained on the dog's dataset.
 
